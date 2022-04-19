@@ -1,12 +1,16 @@
 import * as React from "https://cdn.skypack.dev/react@17.0.1";
 
-const JSX = (
-  <div>
-    <h1>This is a block of JSX</h1>
-    <p>Here's a subtitle</p>
-    {/* sup */}
-    <p>Here's a subtitle</p>
-  </div>
-);
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>Hello React!</h1>
+      </div>
+    )
+  }
+};
 
-ReactDOM.render(JSX, document.getElementById('preview'))
+ReactDOM.render(<MyComponent />, document.getElementById('preview'))
