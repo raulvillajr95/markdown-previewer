@@ -1,9 +1,9 @@
 import * as React from "https://cdn.skypack.dev/react@17.0.1";
 
-const TypesOfFruit = () => {
+const NonCitrus = () => {
   return (
     <div>
-      <h2>Fruits:</h2>
+      <h5>Non-Citrus</h5>
       <ul>
         <li>Apples</li>
         <li>Blueberries</li>
@@ -14,12 +14,46 @@ const TypesOfFruit = () => {
   )
 }
 
-const Fruits = () => {
+const Citrus = () => {
   return (
     <div>
-      <TypesOfFruit />
+      <h5>Citrus</h5>
+      <ul>
+        <li>Lemon</li>
+        <li>Lime</li>
+        <li>Orange</li>
+        <li>Grapefruit</li>
+      </ul>
     </div>
   )
+}
+
+const Vegetables = () => {
+  return (
+    <div>
+      <h2>Vegetables</h2>
+      <ul>
+        <li>Brussel Sprouts</li>
+        <li>Broccoli</li>
+        <li>Squash</li>
+      </ul>
+    </div>
+  )
+}
+
+class Fruits extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    return (
+      <div>
+        <h2>Fruits:</h2>
+        <NonCitrus />
+        <Citrus />
+      </div>
+    )
+  }
 }
 
 class TypesOfFood extends React.Component {
@@ -31,6 +65,7 @@ class TypesOfFood extends React.Component {
       <div>
         <h1>Types of Food:</h1>
         <Fruits />
+        <Vegetables />
       </div>
     ) 
   }
