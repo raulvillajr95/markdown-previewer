@@ -4,7 +4,21 @@ class ControlledInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ''
+      input: `# Header
+## Sub Heading
+[GitHub](https://github.com/)
+
+\`(condtion) ? true : false\`
+\`\`\`
+function test() {
+  console.log('Hello, World!')
+}
+\`\`\`
+- one
+> foo
+![cat](https://icatcare.org/app/uploads/2019/09/The-Kitten-Checklist-1.png)
+**BOLD**
+`
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -14,15 +28,16 @@ class ControlledInput extends React.Component {
     })
   }
   render() {
-    let content = marked.parse(this.state.input)
+    let content = marked.parse(this.state.input);
+    let defaultVal = "Header";
     return (
       <div>
-        <textarea value={this.state.input} onChange={this.handleChange} />
+        <textarea id="editor" value={this.state.input} onChange={this.handleChange}></textarea>
         <h4>Controlled Input:</h4>
-        <div className="Container" dangerouslySetInnerHTML={{__html: content}}></div>
+        <div id="preview" className="Container" dangerouslySetInnerHTML={{__html: content}}></div>
       </div>
     );
   }
 };
 
-ReactDOM.render(<ControlledInput />, document.getElementById('preview'))
+ReactDOM.render(<ControlledInput />, document.getElementById('wholething'))
