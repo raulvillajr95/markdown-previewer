@@ -86,27 +86,28 @@ alert("Hello, World!");
     let content = marked.parse(this.state.input);
     let defaultVal = "Header";
     return (
-      <div class="d-flex flex-column justify-content-center align-items-center">
-        <div class="d-flex flex-column container-sm">
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center">
-              <i class="fa-solid fa-fire"></i>
+      <div className="d-flex flex-column justify-content-center align-items-center">
+        <br/>
+        <div className="d-flex flex-column container-sm">
+          <div className="bg-light d-flex justify-content-between align-items-center rounded-top nv-sizing">
+            <div className=" d-flex align-items-center">
+              <i className="fa-solid fa-fire px-3"></i>
               <h4>Editor</h4>
             </div>
-            <a><i class="fa-solid fa-xmark fa-xl"></i></a>
          </div>
-          <textarea id="editor" value={this.state.input} onChange={this.handleChange}></textarea>
+          <textarea id="editor" className="rounded-bottom border-0 bg-light px-2" value={this.state.input} onChange={this.handleChange} rows="15"></textarea>
         </div>
-          <div class="d-flex flex-column container-md">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex align-items-center">
-                <i class="fa-solid fa-fire"></i>
-                <h4>Previewer</h4>
-              </div>
-              <a><i class="fa-solid fa-xmark fa-xl"></i></a>
+        <br/>
+        <div className="d-flex flex-column container-md">
+          <div className="bg-light d-flex justify-content-between align-items-center rounded-top nv-sizing">
+            <div className="d-flex align-items-center">
+              <i className="fa-solid fa-fire px-3"></i>
+              <h4 className="">Previewer</h4>
             </div>
-            <div id="preview" className="Container" dangerouslySetInnerHTML={{__html: content}}></div>
           </div>
+          <div id="preview" className="Container bg-light px-3 rounded-bottom" dangerouslySetInnerHTML={{__html: content}}></div>
+        </div>
+        <br/>
       </div>
     );
   }
